@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizArena</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="hero">
+    <img src="images/logo.svg" alt="QuizArena Logo" class="logo" />
+    <h1>QuizArena</h1>
+    <p>Play. Learn. Compete.</p>
+</header>
+
+<main class="container">
+    <section class="auth-panel card">
+        <div class="tabs">
+            <button id="loginTab" class="tab active">Login</button>
+            <button id="registerTab" class="tab">Register</button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" class="auth-form hidden">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <select name="role">
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Register</button>
+        </form>
+        <p id="authMessage" class="message"></p>
+    </section>
+
+    <section>
+        <h2>Available Quizzes</h2>
+        <div id="quizCards" class="quiz-grid"></div>
+    </section>
+
+    <section id="quizSection" class="card hidden">
+        <div class="quiz-meta">
+            <div id="progressText"></div>
+            <div class="timer-wrap">
+                <div id="timerValue">10</div>
+                <div id="timerBar"></div>
+            </div>
+        </div>
+        <div id="questionText" class="question"></div>
+        <div id="options" class="options"></div>
+    </section>
+
+    <section id="resultSection" class="card hidden">
+        <h2>Score Card</h2>
+        <p id="resultSummary"></p>
+        <button id="leaderboardBtn">View Leaderboard</button>
+    </section>
+
+    <section id="leaderboardSection" class="card hidden">
+        <h2>Leaderboard</h2>
+        <table>
+            <thead><tr><th>Rank</th><th>Name</th><th>Quiz</th><th>Score</th><th>Time(s)</th></tr></thead>
+            <tbody id="leaderboardBody"></tbody>
+        </table>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
